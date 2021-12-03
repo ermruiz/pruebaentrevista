@@ -1,0 +1,40 @@
+<mvc:View
+    controllerName="sap.btp.pruebaentrevista.controller.Entrevista"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:f="sap.f"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<f:GridList
+                        id="gridList"
+                        headerText="{i18n>tabla}"
+                        items="{externalData>/results}">
+                        <f:customLayout>
+                            <grid:GridBasicLayout id="_IDGenGridBasicLayout1"
+                                gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))"
+                                gridGap="0.5rem"/>
+                        </f:customLayout>
+                        <f:GridListItem id="_IDGenGridListItem1" 
+                            type="Navigation" 
+                            press="handleListItemPress">
+                            	
+                            <VBox id="_IDGenVBox1" class="sapUiSmallMargin">
+                                <layoutData>
+                                    <FlexItemData id="_IDGenFlexItemData1" growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
+                                </layoutData>
+
+                                <Title id="_IDGenTitle1" text="{externalData>/results/name}" wrapping="true" />
+                                <Label id="_IDGenLabel1" text="{externalData>/id} " wrapping="true" />
+                            </VBox>
+                        </f:GridListItem>
+                    </f:GridList>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

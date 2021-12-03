@@ -1,0 +1,119 @@
+{
+    "_version": "1.32.0",
+    "sap.app": {
+        "id": "sap.btp.pruebaentrevista",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "dataSources": {
+            
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.97.0",
+            "libs": {
+                "sap.m": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "sap.btp.pruebaentrevista.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {}
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "sap.btp.pruebaentrevista.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteEntrevista",
+                    "pattern": "RouteEntrevista",
+                    "target": [
+                        "TargetEntrevista"
+                    ]
+                },{
+                    "name": "home",
+                    "pattern": "",
+                    "target": [
+                        "TargetEntrevista"
+                    ]
+                },
+                {
+                    "name": "detalle",
+                    "pattern": "character/{id}",
+                    "target": [
+                        "TargetDetalle"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetEntrevista": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Entrevista",
+                    "viewName": "Entrevista"
+                },
+                "TargetDetalle": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewName": "Detalle"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "sap.btp.pruebaentrevista.view.Entrevista",
+            "type": "XML",
+            "async": true,
+            "id": "Entrevista"
+        }
+    }
+}

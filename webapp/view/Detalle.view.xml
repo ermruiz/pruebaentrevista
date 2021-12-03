@@ -1,0 +1,18 @@
+<mvc:View controllerName="sap.btp.pruebaentrevista.controller.Detalle" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true" 
+    xmlns="sap.m">
+	<Page id="detail" title="{i18n>DetailTitle}" showNavButton="true" navButtonPress="handleNavButtonPress" >
+		<ObjectHeader id="_IDGenObjectHeader1" title="{characterData>/name}">
+			<statuses>
+				<ObjectStatus id="_IDGenObjectStatus1" text="{characterData>/type}" state="{= ${Discontinued} ? 'Error' : 'Success' }"/>
+				<ObjectStatus id="_IDGenObjectStatus2" text="{characterData>/species}" state="Success"/>
+			</statuses>
+			<attributes>
+				<ObjectAttribute id="_IDGenObjectAttribute1" text="Nombre #{characterData>/name}"/>
+				<ObjectAttribute id="_IDGenObjectAttribute2" text="Genero #{characterData>/gender}"/>
+				<ObjectAttribute id="_IDGenObjectAttribute3" text="Estado #{characterData>/status}"/>
+			</attributes>
+		</ObjectHeader>
+	</Page>
+</mvc:View>
